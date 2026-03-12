@@ -14,7 +14,7 @@ public class PilhaSimples {
             System.out.println("Elemento inserido com sucesso: " + elemento);
         }
         else{
-            System.out.println("Não foi possivel inserir o elemento " + elemento);
+            System.out.println("Não foi possivel inserir o elemento: " + elemento + ". A lista está cheia!");
         }
     }
 
@@ -23,6 +23,12 @@ public class PilhaSimples {
         if (this.estaCheia()){  //se ela estiver cheia
             for (int i = this.pilha.length-1; i > 0; i--){
                 this.pilha[i] = this.pilha[i-1];
+
+            }
+            for (int i = 0; i < this.pilha.length-1; i++) {
+                if(this.pilha[i].equals(this.pilha[i+1])){
+                    this.pilha[i] = null;
+                }
             }
         }
     }
@@ -34,7 +40,6 @@ public class PilhaSimples {
                 return false;
             }
         }
-        System.out.println("Não há espaço disponível na pilha.");
         return true;
     }
 

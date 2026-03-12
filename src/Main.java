@@ -7,8 +7,12 @@ public class Main {
         pilhaSimples.empilhar("Leticia");
         pilhaSimples.empilhar("Caio");
         pilhaSimples.empilhar("Nicolas");
-        pilhaSimples.desempilhar(); //verificar pq o primeiro elemento da lista tá duplicado quando retira o último
+        pilhaSimples.empilhar("Isabela");
 
+        pilhaSimples.exibirElementos();
+        pilhaSimples.desempilhar();
+        pilhaSimples.desempilhar(); //não tá retirando o penultimo elemento inserido, arrumar!
+        System.out.println("-------------------------------");
         pilhaSimples.exibirElementos();
     }
 }
