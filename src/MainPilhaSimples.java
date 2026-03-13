@@ -1,6 +1,11 @@
-public class Main {
+public class MainPilhaSimples {
     public static void main(String[] args) {
-        PilhaSimples pilhaSimples = new PilhaSimples(5);
+        PilhaSimples pilhaSimples = new PilhaSimples(8);
+
+        //Teste para inicar uma lista com elementos null
+        pilhaSimples.inicializa();
+        pilhaSimples.exibirElementos();
+        System.out.println("-----------------");
 
         //Teste de empilhar os elementos na pilha
         pilhaSimples.empilhar("Lucas");
@@ -17,13 +22,15 @@ public class Main {
         pilhaSimples.desempilhar();
         pilhaSimples.desempilhar();
         pilhaSimples.desempilhar();
-        pilhaSimples.desempilhar();
+        pilhaSimples.empilhar("Sky");
+        pilhaSimples.empilhar("Martin");
+        pilhaSimples.empilhar("Yuki");
         pilhaSimples.exibirElementos();
         System.out.println("------------------");
         pilhaSimples.desempilhar();
         pilhaSimples.exibirElementos();
         System.out.println("-------------------");
-        pilhaSimples.desempilhar(); //tem q dar erro
+        pilhaSimples.desempilhar(); //Resultado esperado = que não foi possível desempilhar por estar vazia
         pilhaSimples.exibirElementos();
     }
 }
