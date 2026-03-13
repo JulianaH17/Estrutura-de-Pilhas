@@ -20,15 +20,15 @@ public class PilhaSimples {
 
     //Função que remove elementos da pilha (último --> primeiro) tem q arrumar esse!
     public void desempilhar(){
-        if (this.estaCheia()){  //se ela estiver cheia
-            for (int i = this.pilha.length-1; i > 0; i--){
-                this.pilha[i] = this.pilha[i-1];
-
-            }
-            for (int i = 0; i < this.pilha.length-1; i++) {
-                if(this.pilha[i].equals(this.pilha[i+1])){
-                    this.pilha[i] = null;
-                }
+        if (this.pilha[this.pilha.length-1] == null){
+            System.out.println("Não foi possível desempilhar. A pilha está vazia!");
+        }
+        for (int i = this.pilha.length-1; i > 0; i--){
+            this.pilha[i] = this.pilha[i-1];
+        }
+        for (int i = 0; i < this.pilha.length-1; i++) {
+            if(this.pilha[i] == this.pilha[i+1]){
+                this.pilha[i] = null;
             }
         }
     }
