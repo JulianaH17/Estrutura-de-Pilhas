@@ -2,7 +2,7 @@ public class MainPilhaSimples {
     public static void main(String[] args) {
         PilhaSimples pilhaSimples = new PilhaSimples(8);
 
-        //Teste para inicar uma lista com elementos null
+        //Teste para inicar uma pilha com elementos null
         pilhaSimples.inicializa();
         pilhaSimples.exibirElementos();
         System.out.println("-----------------");

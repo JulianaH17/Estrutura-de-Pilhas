@@ -28,7 +28,7 @@ public class PilhaSimples {
         }
     }
 
-    //Função que inicializa uma lista vazia
+    //Função que inicializa uma pilha vazia
     public void inicializa(){
         this.pilha = new String[this.pilha.length];
         for (int i = 0; i < this.pilha.length-1; i++){
