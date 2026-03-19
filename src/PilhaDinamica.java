@@ -1,52 +1,33 @@
 public class PilhaDinamica {
-    No inicio;
+    No topo;    //Vai ser o topo da nossa pilha (último elemento inserido)
 
-    public PilhaDinamica() {
-        this.inicio = new No(null);
+    //Construtor que inicia a pilha dinâmica vazia, onde o topo aponta pro null
+    public PilhaDinamica(){
+        this.topo = null;
         System.out.println("Pilha dinâmica criada com sucesso!");
     }
 
-    public void empilhar(String elemento) {
-
+    //Função que insere elementos na pilha
+    public void empilhar(String elemento){
+        //Se o elemento é nulo ou vazio, a gente exibe uma mensagem que o elemento é inválido
         if (elemento == null || elemento.trim().isEmpty()) {
-            System.out.println("Elemento inválido.");
+            System.out.println("O elemento é inválido.");
             return;
         }
-
-        if (inicioEstaVazio()) {
-            this.inicio.setConteudo(elemento);
-        } else {
-            No aux = this.inicio;
-            No novoNo = new No(elemento);
-            while (aux.getProx() != null) {
-                aux = aux.getProx();
-            }
-            aux.setProx(novoNo);
-        }
-    }
-    private boolean inicioEstaVazio() {
-        if (this.inicio.getConteudo() == null) {
-            return true;
-        } else {
-            return false;
-        }
+        //Vai funcionar tanto pra uma pilha vazia quanto uma pilha com elementos já inseridos, pq a gente mexe só no topo
+        No aux = new No(elemento);  //Criando um novo nó auxiliar
+        aux.setProx(this.topo);     //O novo nó vai apontar pro antigo topo
+        this.topo = aux;        //Settamos o último elemento inserido como novo topo (atualiza)
     }
 
-    public void exibir() {
-        if (inicioEstaVazio()) {
-            System.out.println("Não existem elementos na lista dinâmica.");
-        } else {
-            No aux = this.inicio;
-//            while(aux != null && aux.getConteudo() != null) {
-//                System.out.println(aux.getConteudo());
-//                aux = aux.getProx();
-//            }
-
-            while (aux != null) {
-                System.out.println(aux.getConteudo());
-                aux = aux.getProx();
-            }
-            //System.out.println(aux.getConteudo());
+    public void desempilhar(){
+        if (this.topo != null) {    //Se nossa pilha não estiver vazia
+            String elementoRemovido = this.topo.getConteudo();      //Pega e guarda o elemento q será removido
+            this.topo = this.topo.getProx();        //Muda o topo atual para o próximo elemento (novo topo)
+            System.out.println("O elemento " + elementoRemovido + " foi removido com sucesso!");
+        }
+        else {
+            System.out.println("A pilha se encontra vazia!");
         }
     }
 

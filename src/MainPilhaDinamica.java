@@ -10,6 +10,5 @@ public class MainPilhaDinamica {
         pilhaDinamica.empilhar("Leticia");
         pilhaDinamica.empilhar("Lucas");
 
-        pilhaDinamica.exibir();
     }
 }
