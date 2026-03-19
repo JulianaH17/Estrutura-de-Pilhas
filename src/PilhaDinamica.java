@@ -20,8 +20,9 @@ public class PilhaDinamica {
         this.topo = aux;        //Settamos o último elemento inserido como novo topo (atualiza)
     }
 
+    //Função que remove elementos da pilha
     public void desempilhar(){
-        if (this.topo != null) {    //Se nossa pilha não estiver vazia
+        if (!vazia()) {    //Se nossa pilha não estiver vazia
             String elementoRemovido = this.topo.getConteudo();      //Pega e guarda o elemento q será removido
             this.topo = this.topo.getProx();        //Muda o topo atual para o próximo elemento (novo topo)
             System.out.println("O elemento " + elementoRemovido + " foi removido com sucesso!");
@@ -31,4 +32,25 @@ public class PilhaDinamica {
         }
     }
 
+    //Função que verifica se a pilha está vazia
+    private boolean vazia(){
+        if (this.topo == null) {
+            return true;
+        }
+        return false;
+    }
+
+    //Função que exibe os elementos da pilha (topo (último) --> primeiro)
+    public void exibirElementos(){
+        if (vazia()) {
+            System.out.println("Não há elementos para serem exibidos.");
+        }
+        else {
+            No aux = this.topo;
+            while (aux != null) {
+                System.out.println(aux.getConteudo());
+                aux = aux.getProx();
+            }
+        }
+    }
 }

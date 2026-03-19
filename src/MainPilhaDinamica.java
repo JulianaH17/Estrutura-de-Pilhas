@@ -10,5 +10,16 @@ public class MainPilhaDinamica {
         pilhaDinamica.empilhar("Leticia");
         pilhaDinamica.empilhar("Lucas");
 
+        pilhaDinamica.exibirElementos();
+        System.out.println("------------------");
+        pilhaDinamica.desempilhar();
+        pilhaDinamica.desempilhar();
+        pilhaDinamica.desempilhar();
+        pilhaDinamica.desempilhar();
+        pilhaDinamica.desempilhar();
+        pilhaDinamica.desempilhar();
+        pilhaDinamica.desempilhar();
+        pilhaDinamica.desempilhar();    //É pra dar erro nesse
+        pilhaDinamica.exibirElementos();
     }
 }
